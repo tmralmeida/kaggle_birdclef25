@@ -24,4 +24,3 @@ dependencies:
       - soundfile
       - soxr
       - python-dotenv
-      - birdclef  
