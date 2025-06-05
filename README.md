@@ -4,7 +4,7 @@
     <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
 </a>
 
-Solution for the BirdCLEF+ 2025 kaggle competition.
+Solution for the BirdCLEF+ 2025 kaggle competition without much preparation.
 
 ## Project Organization
 
@@ -59,3 +59,29 @@ Solution for the BirdCLEF+ 2025 kaggle competition.
 
 --------
 
+## Preprocess and train
+
+To preprocess the data (i.e., split the data into 5-s segments):
+
+```
+python -m birdclef.preprocess_data PATH_TO_RAW_DATA PATH_TO_OUTPUT_DIRECTORY_P1
+```
+
+To normalize the data and split the data into train/val splits:
+
+```
+python -m birdclef.normalize_data PATH_TO_OUTPUT_DIRECTORY_P1 PATH_TO_OUTPUT_DIRECTORY_P2 SPECTOGRAM_STYLE
+```
+
+where, `PATH_TO_OUTPUT_DIRECTORY_P1` is in [`mel`, `stft`].
+
+To train the model:
+
+```
+python -m birdclef.train_model
+```
+
+## Note
+
+I only had the time to try mel spectrograms. 
+Future work can extend this to the fourier domain.
